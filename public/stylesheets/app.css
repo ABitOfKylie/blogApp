@@ -1,13 +1,40 @@
 i.icon{
-	font-size: 4em;
+	font-size: 2em;
 }
 
+i.chevron{
+    font-size: 1em;
+    font-weight:800;
+}
 .container.main{
-    margin-top: 7.0em;
+    margin-top: 5.0em;
 }
 
 #delete {
     display: inline;
+}
+
+.message{
+    border:none
+}
+body{
+    background:gray;
+}
+
+.ui.primary.button:hover {
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.35) !important
+  ;
+}
+
+.image{
+    border-radius:2.125rem;
+}
+.ui.attached.segment{
+    background-color:cadetblue;
+    color:white;
+    border:0px;
 }
 
 hr {

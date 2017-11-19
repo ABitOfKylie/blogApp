@@ -1,0 +1,74 @@
+<% include ./partials/header %>
+<div class = "ui main text container">
+    <div class="ui attached icon light teal message light teal center aligned">
+        <i class="help circle icon"></i>
+        <div class="content">
+          RESTful Routes
+        </div>
+     </div>
+     <div class="ui attached segment teal center aligned">
+         <p>A table of all 7 RESTful routes </p>
+     </div>
+     <table class="ui bottom attached celled striped inverted teal table">
+        <thead>
+            <tr>
+              <th>Name</th>
+              <th>URL/Path</th>
+              <th>HTTP Verb</th>
+              <th>Purpose</th>
+              <th>Mongoose Method</th>
+            </tr></thead>
+        <tbody>
+          <tr>
+            <td class="">INDEX</td>
+            <td>/flowers</td>
+            <td>GET</td>
+            <td>Displays a list of all flowers</td>
+            <td>Flower.find()</td>
+          </tr>
+          <tr>
+            <td class="positive">NEW</td>
+            <td>/flowers/new</td>
+            <td>GET</td>
+            <td>Displays the form to add a new flower</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td  class="positive">CREATE</td>
+            <td>/flowers</td>
+            <td>POST</td>
+            <td>Add new flower to the db</td>
+            <td>Flower.create()</td>
+          </tr>
+          <tr>
+            <td class="ui message light teal">SHOW</td>
+            <td>/flowers/:id</td>
+            <td>GET</td>
+            <td>show info about particular flower</td>
+            <td>Flower.findById()</td>
+          </tr>
+          <tr>
+            <td class="ui warning">EDIT</td>
+            <td>/flowers/:id/edit</td>
+            <td>GET</td>
+            <td>Shows edit form</td>
+            <td>Flower.findById()</td>
+          </tr>
+          <tr>
+            <td class="ui warning">UPDATE</td>
+            <td>/flowers/:id</td>
+            <td>POST</td>
+            <td>update info about particular flower then redirect</td>
+            <td>Flower.findByIdAndUpdate()</td>
+          </tr>
+          <tr>
+            <td class="negative">DESTROY</td>
+            <td>/flowers/:id</td>
+            <td>DELETE</td>
+            <td>delete a particular flower from db & redirect</td>
+            <td>Flower.findByIdAndRemove()</td>
+          </tr>
+        </tbody>
+  </table>
+</div>
+				

@@ -1,14 +1,18 @@
 var bodyParser  = require("body-parser"),
+    expressSanitizer = require("express-sanitizer"),
+    methodOverride = require("method-override"),
     mongoose    = require("mongoose"),
     express     = require("express"),
-    ejs         = require("ejs"),
     app         = express();
- 
+
 mongoose.connect("mongodb://localhost/restful_blog_app");
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+
+app.use(expressSanitizer());
+app.use(methodOverride("_method"));
 
 // Mongoose/Model Config.
 var blogSchema = new mongoose.Schema({
@@ -68,8 +72,51 @@ app.get("/blogs/:id", function(req, res){
 
 // by using req.body.blog -- creates an object 
 
+//EDIT ROUTE
+app.get("/blogs/:id/edit", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.render("edit", {blog: foundBlog});
+        }
+    });
+});
+
+//UPDATE ROUTE
+app.put("/blogs/:id", function(req, res){
+    req.body.blog.body = req.sanitize(req.body.blog.body); // could use middleware to avoid repetition in routes 
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+        if(err){
+            res.redirect("/blogs");
+        }else{
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
+    
+});
+
+// DELETE ROUTE
+app.delete("/blogs/:id", function(req, res){
+ Blog.findByIdAndRemove(req.params.id, function(err){
+     if(err){
+         res.redirect("/blogs/req.params.id");
+     }else{
+         res.redirect("/blogs")
+     }
+ })
+    
+});
+
+
+// note: This doesn't have to be a delete request in order to delete something.
+// I could make it a app.get("/blogs/:id/delete"),
+// following RESTful route conventions - it needs to be a delete request.
+
+
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Our blog server is running");
 });
-    
+
+
