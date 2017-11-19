@@ -2,6 +2,7 @@ var bodyParser  = require("body-parser"),
     expressSanitizer = require("express-sanitizer"),
     methodOverride = require("method-override"),
     mongoose    = require("mongoose"),
+    ejs         = require("ejs"),
     express     = require("express"),
     app         = express();
 
@@ -32,6 +33,10 @@ var Blog = mongoose.model("Blog", blogSchema);
 // Routes
 app.get("/", function(req, res){
     res.redirect("/blogs");
+});
+
+app.get("/restful", function(req,res){
+    res.render("restful");
 });
 
 //Index Route
@@ -102,9 +107,9 @@ app.delete("/blogs/:id", function(req, res){
      if(err){
          res.redirect("/blogs/req.params.id");
      }else{
-         res.redirect("/blogs")
+         res.redirect("/blogs");
      }
- })
+ });
     
 });
 
@@ -116,7 +121,7 @@ app.delete("/blogs/:id", function(req, res){
 
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("Our blog server is running");
+    console.log("Z blog server iz running");
 });
 
 
