@@ -19,14 +19,25 @@
                     <i class="Edit icon"></i>
                   </div>
                 </a>
-   
-                <form class="ui vertical animated button" id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                    <div class="hidden content">Throw</div>
+
+<!--                 Alt 1 - exactly as above but using form instead of <a>
+                <form id="delete" class="ui vertical animated button" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                  <div class="hidden content">Delete</div>
+                  <div class="visible content">
+                    <i class="Trash Outline icon"></i>
+                  </div>
+                </form> -->
+
+                <div class="ui vertical animated button">
+                <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                    <div class="hidden content">heave</div>
                     <div class="visible content">
                         <i class="Trash icon"></i>
                     </div>  
                 </form>
+                </div>
                 
+
 
                 <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
                     <button class="negative ui button">Delete</button>
