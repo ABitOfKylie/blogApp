@@ -11,10 +11,10 @@ i.chevron{
 }
 
 .container.main.segment{
-    background:cadetblue;
+    background:#7eb1b3;
 }
 .large.header{
-    color: #545454;
+    color:#f0ffff;
 }
 
 #delete {
@@ -31,6 +31,7 @@ body{
 .showP{
     color:white;
 }
+
 .ui.primary.button:hover {
   box-shadow:
     0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,

@@ -1,23 +1,46 @@
 <% include ./partials/header %>
 <div class = "ui main text container segment">
     <div class = "ui huge header"><%= blog.title %></div>
-        <div class = "ui top attached">
-            <div class = "item">
-                <img class ="ui centered rounded image" src="<%= blog.image %>">
-                <div class = "content">
-                    <span><%= blog.created.toDateString() %></span>
-                </div>
-                <div class = "description">
-                    <p class=showP><%= blog.body%></p>
-                </div>
-                <br>
-                <a class = "ui orange button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+    <div class = "ui top attached">
+        <div class = "item">
+            <img class ="ui centered rounded image" src="<%= blog.image %>">
+            <div class = "content">
+                <span><%= blog.created.toDateString() %></span>
+            </div>
+            <div class = "description">
+                <p class=showP><%= blog.body%></p>
+            </div>
+            <br>
+
+            <div class="ui icon buttons">
+                <a class="ui vertical animated button" href="/blogs/<%=blog._id%>/edit" tabindex="0">
+                  <div class="hidden content">Edit</div>
+                  <div class="visible content">
+                    <i class="Edit icon"></i>
+                  </div>
+                </a>
+   
+                <form class="ui vertical animated button" id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                    <div class="hidden content">Throw</div>
+                    <div class="visible content">
+                        <i class="Trash icon"></i>
+                    </div>  
+                </form>
+                
 
                 <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
                     <button class="negative ui button">Delete</button>
-                </form>
+                </form>  
+
+                <div class="ui vertical animated button" href="/blogs" tabindex="0">
+                  <div class="hidden content">Return</div>
+                  <div class="visible content">
+                    <i class="Home icon"></i>
+                  </div>
+                </div>
             </div>
         </div>
+    </div>
 </div>
 <% include ./partials/footer %>
 
