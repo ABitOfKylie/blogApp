@@ -1,64 +1,68 @@
-i.icon{
-	font-size: 2em;
+i.icon {
+    font-size: 2em;
 }
 
-i.chevron{
+i.chevron {
     font-size: 1em;
-    font-weight:800;
+    font-weight: 800;
 }
-.container.main{
+
+.container.main {
     margin-top: 5.0em;
 }
 
-.container.main.segment{
-    background:#7eb1b3;
+.container.main.segment {
+    background: #7eb1b3;
 }
-.large.header{
-    color:#f0ffff;
+
+.large.header {
+    color: #f0ffff;
 }
 
 #delete {
     display: inline;
 }
 
-.message{
-    border:none
-}
-body{
-    background:gray;
+.message {
+    border: none
 }
 
-.showP{
-    color:white;
+body {
+    background: gray;
+}
+
+.showP {
+    color: white;
 }
 
 .ui.primary.button:hover {
-  box-shadow:
-    0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,
-    0px 2px 3px 0px rgba(0, 0, 0, 0.35) !important
-  ;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.35) !important;
 }
 
-.image{
-    border-radius:2.125rem;
+.image {
+    border-radius: 2.125rem;
 }
-.ui.attached.segment{
-    background-color:cadetblue;
-    color:white;
-    border:0px;
+
+.ui.attached.segment {
+    background-color: cadetblue;
+    color: white;
+    border: 0px;
 }
 
 hr {
-    overflow: visible; /* For IE */
+    overflow: visible;
+    /* For IE */
     padding: 0;
     border: none;
     border-top: medium double teal;
     color: teal;
     text-align: center;
 }
+
 hr:after {
     content: "";
-    color:teal;
+    color: teal;
     display: inline-block;
     position: relative;
     top: -0.7em;
@@ -66,3 +70,10 @@ hr:after {
     padding: 0 0.25em;
     background: white;
 }
+
+
+/*
+Navbar -- change color to #AFCECF 
+segment - new page: #7eb1b3
+softer white - #f0ffff
+*/

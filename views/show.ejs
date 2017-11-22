@@ -20,16 +20,7 @@
                   </div>
                 </a>
 
-<!--                 Alt 1 - exactly as above but using form instead of <a>
-                <form id="delete" class="ui vertical animated button" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                  <div class="hidden content">Delete</div>
-                  <div class="visible content">
-                    <i class="Trash Outline icon"></i>
-                  </div>
-                </form> -->
-
-<!--                 <div class="ui vertical animated button">
- -->                <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+             <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
                       <button class="ui vertical animated button">
                     <div class="hidden content">heave</div>
                     <div class="visible content">
@@ -37,22 +28,16 @@
                     </div> 
                     </button> 
                   </form>
-                <!-- </div> -->
                 
-                <a class="ui vertical animated button" href="/blogs">
-                  <div class="hidden content">Return</div>
-                  <div class="visible content">
-                    <i class="Home icon"></i>
-                  </div>
-                </a>
-
-<!--                 <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                    <button class="negative ui button">Delete</button>
-                </form>  -->
+              <a class="ui vertical animated button" href="/blogs">
+                <div class="hidden content">Return</div>
+                <div class="visible content">
+                  <i class="Home icon"></i>
+                </div>
+              </a>
         </div>
     </div>
 </div>
-
 
 <% include ./partials/footer %>
 
