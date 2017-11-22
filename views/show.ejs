@@ -28,31 +28,32 @@
                   </div>
                 </form> -->
 
-                <div class="ui vertical animated button">
-                <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+<!--                 <div class="ui vertical animated button">
+ -->                <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                      <button class="ui vertical animated button">
                     <div class="hidden content">heave</div>
                     <div class="visible content">
                         <i class="Trash icon"></i>
-                    </div>  
-                </form>
-                </div>
+                    </div> 
+                    </button> 
+                  </form>
+                <!-- </div> -->
                 
-
-
-                <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                    <button class="negative ui button">Delete</button>
-                </form>  
-
-                <div class="ui vertical animated button" href="/blogs" tabindex="0">
+                <a class="ui vertical animated button" href="/blogs">
                   <div class="hidden content">Return</div>
                   <div class="visible content">
                     <i class="Home icon"></i>
                   </div>
-                </div>
-            </div>
+                </a>
+
+<!--                 <form id="delete" action = "/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                    <button class="negative ui button">Delete</button>
+                </form>  -->
         </div>
     </div>
 </div>
+
+
 <% include ./partials/footer %>
 
 
